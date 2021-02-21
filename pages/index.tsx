@@ -1,11 +1,17 @@
 import React from "react";
 import AdminHeader from "../components/layouts/admin.header";
+import AdminSidebar from "../components/layouts/admin.sidebar";
 
-export default () => {
+const Home = () => {
     return (
         <div>
             <AdminHeader />
-            <h1>Hello Dek Dek</h1>
+            <AdminSidebar />
+            <div className="content-wrapper" >
+                <h1>Hello Dek Dek</h1>
+            </div>
         </div>
     )
-}
+};
+
+export default Home;
