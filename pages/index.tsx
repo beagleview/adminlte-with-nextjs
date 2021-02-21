@@ -1,18 +1,12 @@
 import React from "react";
-import AdminHeader from "../components/layouts/admin.header";
-import AdminSidebar from "../components/layouts/admin.sidebar";
-import AdminFooter from "../components/layouts/admin.footer";
+import AdminHOC from "../components/layouts/admin.hoc";
 
 const Home = () => {
+
     return (
-        <div>
-            <AdminHeader />
-            <AdminSidebar />
-            <div className="content-wrapper" >
-                <h1>Hello Dek Dek</h1>
-            </div>
-            <AdminFooter />
-        </div>
+        <AdminHOC title={"Home"}>
+            <h1>Hello Dek Dek</h1>
+        </AdminHOC>
     )
 };
 
