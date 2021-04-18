@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { AppProps } from "next/app";
+import { wrapper} from "../redux";
 
 function StudentApp({ Component, pageProps }: AppProps) {
     return (
@@ -9,4 +10,4 @@ function StudentApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default StudentApp;
+export default wrapper.withRedux(StudentApp);
