@@ -1,5 +1,5 @@
-import authenActions from "./authen.action"
+import authActions from "./authen.action"
 
 export default {
-    ...authenActions,
+    ...authActions,
 }
