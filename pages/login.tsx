@@ -1,7 +1,15 @@
-import React from "react";
-import AdminHOC from "../components/layouts/admin.hoc";
+import React, {ReactElement} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import actions from "../redux/actions"
 
-const Login = () => {
+interface Props {
+
+}
+
+const Login = ({}: Props): ReactElement => {
+
+    const dispatch =useDispatch()
+    const authReducer = useSelector(({authReducer}) => authReducer)
 
     return (
         <div className="login-page">
@@ -13,7 +21,7 @@ const Login = () => {
                 <div className="card">
                     <div className="card-body login-card-body">
                         <p className="login-box-msg">Sign in to start your session</p>
-                        <form action="../../index3.html" method="post">
+
                             <div className="input-group mb-3">
                                 <input type="email" className="form-control" placeholder="Email" />
                                 <div className="input-group-append">
@@ -41,11 +49,17 @@ const Login = () => {
                                 </div>
                                 {/* /.col */}
                                 <div className="col-4">
-                                    <button type="submit" className="btn btn-primary btn-block">Sign In</button>
+                                    <button className="btn btn-primary btn-block"
+                                        onClick={()=>{
+                                            dispatch(actions.login({username: "admin", password: "1234"}))
+                                        }}>Sign In
+                                    </button>
+                                    <span>{authReducer.token ? authReducer.token : ""}</span>
+                                    <span>{authReducer.token ? authReducer.user.username : ""}</span>
                                 </div>
                                 {/* /.col */}
                             </div>
-                        </form>
+
                         <div className="social-auth-links text-center mb-3">
                             <p>- OR -</p>
                             <a href="#" className="btn btn-block btn-primary">

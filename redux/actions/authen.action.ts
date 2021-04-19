@@ -10,8 +10,11 @@ const setClearReducer = () => ({
 })
 
 const login = ({username, password}: any)=> {
+    console.log("login")
     return dispatch=>{
-        dispatch(setLoginReducer({token: Math.random().toString(), user:{username}}))
+        setTimeout(()=>{
+            dispatch(setLoginReducer({token: Math.random().toString(), user:{username}}))
+        }, 500)
     }
 }
 
