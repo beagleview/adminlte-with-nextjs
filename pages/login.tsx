@@ -6,10 +6,10 @@ interface Props {
 
 }
 
-const Login = ({}: Props): ReactElement => {
+export default function login({}: Props): ReactElement{
 
     const dispatch =useDispatch()
-    const authReducer = useSelector(({authReducer}) => authReducer)
+    const authenReducer = useSelector(({authenReducer}) => authenReducer)
 
     return (
         <div className="login-page">
@@ -54,8 +54,8 @@ const Login = ({}: Props): ReactElement => {
                                             dispatch(actions.login({username: "admin", password: "1234"}))
                                         }}>Sign In
                                     </button>
-                                    <span>{authReducer.token ? authReducer.token : ""}</span>
-                                    <span>{authReducer.token ? authReducer.user.username : ""}</span>
+                                    <span>{authenReducer.token ? authenReducer.token : ""}</span>
+                                    <span>{authenReducer.token ? authenReducer.user.username : ""}</span>
                                 </div>
                                 {/* /.col */}
                             </div>
@@ -83,6 +83,4 @@ const Login = ({}: Props): ReactElement => {
 
         </div>
     )
-};
-
-export default Login;
+}

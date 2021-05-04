@@ -1,16 +1,18 @@
-import {CLEAR, LOGIN} from "../types";
+import { LOGIN, CLEAR } from './../types';
+import {Account} from "../../dao/Account"
 
-const setLoginReducer = (payLoad) => ({
+
+const setLoginReducer = (payload) => ({
     type: LOGIN,
-    payLoad
+    payload
 })
 
 const setClearReducer = () => ({
     type: CLEAR,
 })
 
-const login = ({username, password}: any)=> {
-    console.log("login")
+
+const login = ({username, password}:Account)=>{
     return dispatch=>{
         setTimeout(()=>{
             dispatch(setLoginReducer({token: Math.random().toString(), user:{username}}))

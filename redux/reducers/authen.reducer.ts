@@ -4,11 +4,10 @@ const initialState = {
     user: null
 }
 
-const authReducer = () => (state = initialState, { type, payload }) => {
-    console.log("STAGE Login")
+export default (state = initialState, { type, payload }) => {
     switch (type) {
+
         case LOGIN:
-            console.log("STAGE Login")
             return { ...state, token: payload.token, user: { username: payload.user.username } }
         case CLEAR:
             return initialState
@@ -17,5 +16,3 @@ const authReducer = () => (state = initialState, { type, payload }) => {
             return state
     }
 }
-
-export default authReducer;

@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const AdminSidebar = () => {
     return (
         <aside className="main-sidebar sidebar-dark-primary elevation-4">
@@ -28,9 +30,9 @@ const AdminSidebar = () => {
                             </a>
                             <ul className="nav nav-treeview">
                                 <li className="nav-item">
-                                    <a href="./index.html" className="nav-link">
+                                    <a href="/" className="nav-link">
                                         <i className="far fa-circle nav-icon"/>
-                                        <p>Dashboard v1</p>
+                                        <p>Home</p>
                                     </a>
                                 </li>
                                 <li className="nav-item">
